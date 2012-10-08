@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Factor Diagrams Example</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="factor-diagrams.js"></script>
+    <script src="jquery-1.8.2.min.js"></script>
+    <script>//<![CDATA[
+var g_canvas, g_fd;
+$(function () {
+    g_canvas = document.getElementById('factor-diagram');
+    g_fd = factorDiagram(15, 400, 400);
+    g_fd.drawOnCanvas(g_canvas);
+
+    $('#number').keyup(function () {
+        try {
+            g_fd = factorDiagram(new Number($(this).val()), 400, 400);
+            g_canvas.getContext('2d').clearRect(0, 0, 400, 400);
+            g_fd.drawOnCanvas(g_canvas);
+        }
+        catch (e) {
+            //alert("Invalid input: " + $(this).val());
+        }
+    });
+});
+    //]]></script>
+  </head>
+  <body>
+    <div id="content">
+      <h1>Factor Diagrams!</h1>
+      <p>The idea is stolen from <a href="http://mathlesstraveled.com/2012/10/05/factorization-diagrams/">The Math Less Traveled</a>. Type in a number to see its factor diagram.</p>
+      <p><input type="text" id="number" value="15"/></p>
+      <canvas id="factor-diagram" width="400" height="400"></canvas>
+    </div>
+  </body>
+</html>
