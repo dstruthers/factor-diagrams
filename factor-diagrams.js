@@ -19,7 +19,7 @@ function factorDiagram (n, w, h) {
     var d = new Diagram(0, 0, w, h);
     var flipFor2 = false;
     d.add(new Circle(0, 0, w / 2));
-    while (factors.length) {
+    while (factors instanceof Array && factors.length) {
         var f = factors.shift();
         var nd = new Diagram(0, 0, w, h);
         var startingOffset = -Math.PI / 2;
