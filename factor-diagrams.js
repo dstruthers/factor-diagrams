@@ -1,5 +1,5 @@
 function factor (n) {
-    if (n < 1 || isNaN(n)) {
+    if (n < 1 || isNaN(n) || Math.floor(n) != n) {
         throw new Exception('factor: invalid input');
     }
     else if (n === 1) {
