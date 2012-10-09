@@ -2,3 +2,5 @@ body { background-color: #ddd; font-family: Helvetica, Arial, sans-serif; }
 #content { width: 960px; background-color: #fff; border: 1px solid #444; padding: 10px; margin: auto; }
 #content h1 { margin-top: 0; }
 #factor-diagram { width: 400px; margin: auto; }
+.warning { font-size: 80%; }
+#error { color: #f00; display: none; }
